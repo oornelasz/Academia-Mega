@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-widt, initial-scale 1-0">
+        <title>Notas Guardadas </title>
+        <style></style>
+    </head>
+    <body>
+        <h1>
+            <textarea id="nota"></textarea>
+            <br>
+            <button>Guardar nota</button>
+            <button>Borrar Todas</button>
+            <br>
+            <h2>Listas de notas</h2>
+            <ul id="ListaNota"> </ul>
+            <script>
+                function GuardarNota (){
+const textto = document.getElementById("nota").vallue.trim();
+if (texto ==="") return;
+let notas = JSON.parse (localStorage.getItem("notas"))||[];
+notas.push(texto);
+
+localStorage.setItem("notas",JSON.stringify(notas));
+document.getElementById("notas").vallue="";
+                }
+
+                function mostrarnotas(){
+const list = document.getElementById("listanotas");
+lista.innerHTML = "";
+let notas =JSON.parse(localStorage.getItem("notas")) ||[];
+
+console.log(notas);
+notas.forEach((nota, index) =>{
+const li =document.createElement("li");
+li.innerHTML = `${nota} <span onclick-"borrarNota(${index}"> X </span>) `
+lista.appendchild(li)
+})
+                }
+
+        function borrarNotas(){
+localStorage.removeItem("notas");
+mostrarnotas();
+        }        
+function borrarNotas(index){
+   let notas = JSON.parse(localStorage.getItem("notas"))||[];
+   console.log(index);
+   notas.splice(index, 1);
+   localStorage.setItem("notas", JSON.stringify(notas));
+   mostrarNotas ();
+}
+
+mostrarNotas();
+</script>
+</h1>
+</body>
+</html>
+
+                
+        
+
