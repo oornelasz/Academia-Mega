@@ -1,0 +1,10 @@
+<div class="card">
+    <img [src]= "galeria" alt="">
+    <div class="card-content">
+        <h3 class="card-title">{{title}}</h3>
+        <p class="card-description">{{content}}</p>
+        <button class="btn" (click)="mostrarAlerta()">{{buttontext}}</button>
+        <input type="text"[(ngModel)] = "nombre" placeholder="Escribe un nombre!"> <!--El texto que ingreses remplaza la variable en el TS-->
+        <p>{{nombre}}</p>
+    </div> 
+</div>
